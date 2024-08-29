@@ -18,17 +18,19 @@
             @keyframes fadeIn {
                 from {
                     opacity: 0;
+                    background-color: black; /* Start with black */
                 }
                 to {
                     opacity: 1;
+                    background-color: transparent; /* End with transparent or the final color */
                 }
             }
-
-            .load-fade-in {
-                animation: fadeIn 1s ease-in-out;
-            }
+            
             .projectcard-markdown-body {
                 font-size: 20px; /* Adjust the font size as needed */
+            }
+            body {
+                animation: fadeIn 1s ease-in-out; /* Adjust the duration as needed */
             }
         </style>
     </head>
@@ -40,17 +42,17 @@
                 <div class="row">
                     <div class="col-md-12">
                         <h1 class="display-1" style="font-family: Arial;">Benjamin Lam</h1>
-                        <button class="btn btn-primary">Resume</button>
-                        <button class="btn btn-secondary">Download Full Portfolio</button>
+                        <button class="btn btn-primary btn-lg">Resume</button>
+                        <button class="btn btn-secondary btn-lg">Download Full Portfolio</button>
                     </div>
 
-                    <div class="col-md-12 mt-3 load-fade-in">
+                    <!-- <div class="col-md-12 mt-3 load-fade-in">
                         <ul class="list-unstyled">
                             <li><a href="#">Link 1</a></li>
                             <li><a href="#">Link 2</a></li>
                             <li><a href="#">Link 3</a></li>
                         </ul>
-                    </div>
+                    </div> -->
 
                 </div>
             </div>
@@ -60,7 +62,7 @@
         <div class="container mt-3" style="padding-bottom: 20vh;">
 
             <!-- Projects Section -->
-            <div class="container mt-3 load-fade-in">
+            <div class="container mt-3">
                 <!-- Project Section Title -->
                 <div class="row">
                     <div class="col-md-12">
