@@ -1,0 +1,39 @@
+<!-- Project summary card -->
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-md-12 mx-auto ">
+            <div class="card">
+
+                <div class="card-header">
+                    <h2>${project.title}</h2>
+                </div>
+
+                <div class="card-body">
+                    <div class="container">
+                        <div class="row">                        
+                            <div class="col-md-5">
+                                <img src="${project.image}" class="card-img-top" alt="Project Image">
+                            </div>
+
+                            <!-- Markdown text for the summary -->
+                            <div class="col-md-7 d-flex flex-column">
+                                <div class="container flex-grow-1">
+                                    ${project.text}
+                                </div>
+                                <!-- Link to the full project writeup -->
+                                <a href="${project.link}" class="btn btn-primary mt-auto align-self-end">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-footer">
+                    <div class="container">
+                        <!-- Tags -->  
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

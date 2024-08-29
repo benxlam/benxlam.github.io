@@ -1,0 +1,18 @@
+[
+    {
+        "title": "test project2",
+        "text": "projects/project2/summary.md",
+        "image": {
+            "path": "projects/project2/ProfPic.JPG"
+        },
+        "link": "projects/project2/webpage.html"
+    },
+    {
+        "title": "test project",
+        "text": "projects/project1/summary.md",
+        "image": {
+            "path": "projects/project1/ProfPic.JPG"
+        },
+        "link": "projects/project1/webpage.html"
+    }
+]
