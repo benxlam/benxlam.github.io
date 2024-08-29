@@ -27,6 +27,9 @@
             .load-fade-in {
                 animation: fadeIn 1s ease-in-out;
             }
+            .projectcard-markdown-body {
+                font-size: 20px; /* Adjust the font size as needed */
+            }
         </style>
     </head>
 
@@ -64,16 +67,13 @@
                         <h1 class="display-5">Projects</h1>
                         <hr style="height: 1px; background-color: black;">
                     </div>
+
+                    <!-- Project Summary Cards -->
+                    <div id="projects" class="col"></div>
+                    <!-- Render the Project cards showing the summaries -->
+                    <script src="js/render_project_cards.js"></script>
                 </div>
-
-                <!-- Project Summary Cards -->
-                <div id="projects" class="row"></div>
-                <!-- Render the Project cards showing the summaries -->
-                <script src="js/render_project_cards.js"></script>
             </div>
-
-
-
         </div>
     </body>
 </html>

@@ -21,16 +21,17 @@ $(document).ready(function() {
                     $.get(project.text, function(markdownText) {
                         // Convert Markdown to HTML
                         const renderedMarkdown = marked.parse(markdownText);
-                        console.log(markdownText);
+
+                        console.log(project);
 
                         // Replace template placeholders with project data
                         const renderedTemplate = template
                             .replace('${project.title}', project.title)
-                            .replace('${project.image}', project.image.path)
+                            .replace('${project.date}', project.date)
+                            .replace('${project.image}', project.image)
                             .replace('${project.text}', renderedMarkdown) // Insert rendered Markdown
                             .replace('${project.link}', project.link);
 
-                        console.log(renderedTemplate);
                         // Append the project card to the projects container
                         projectCard.html(renderedTemplate);
                         projectsContainer.append(projectCard);

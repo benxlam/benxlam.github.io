@@ -1,18 +1,16 @@
 [
     {
         "title": "test project2",
+        "date": "2020-01-01",
         "text": "projects/project2/summary.md",
-        "image": {
-            "path": "projects/project2/ProfPic.JPG"
-        },
+        "image": "projects/project2/ProfPic.JPG",
         "link": "projects/project2/webpage.html"
     },
     {
         "title": "test project",
+        "date": "2020-01-01",
         "text": "projects/project1/summary.md",
-        "image": {
-            "path": "projects/project1/ProfPic.JPG"
-        },
+        "image": "projects/project1/ProfPic.JPG",
         "link": "projects/project1/webpage.html"
     }
 ]
