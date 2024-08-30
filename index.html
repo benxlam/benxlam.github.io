@@ -29,9 +29,9 @@
                 }
             }
 
-            .projectcard-markdown-body {
-                font-size: 20px; /* Adjust the font size as needed */
-            }
+            /* .projectcard-markdown-body {
+                font-size: 40px; /* Adjust the font size as needed */
+            } */
 
         </style>
     </head>
@@ -39,19 +39,32 @@
     <body>
         <!-- Splash header -->
         <splash>
-            <div class="container-fluid bg-dark text-white " style="height: 90vh; padding-top: 30vh;">
+            <div class="container-fluid bg-dark text-white" style="height: 90vh; padding-top: 30vh;">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
-                            <h1 class="display-1" style="font-family: Arial;">Benjamin Lam</h1>
-                            <button class="btn btn-primary btn-lg">Resume</button>
-                            <button class="btn btn-secondary btn-lg">Download Full Portfolio</button>
+                            <!-- <div class="container"> -->
+                                <div class="row">
+                                    <div class="col-12 col-md-8">
+                                        <h1 class="display-2 d-none d-md-block" style="font-family: Arial;">Benjamin Lam</h1>
+                                        <h1 class="display-4 d-md-none" style="font-family: Arial;">Benjamin Lam</h1>
+                                    </div>
+                                <!-- </div> -->
+                            </div>
+                              
+                            <button class="btn btn-primary mt-2 btn-lg d-none d-md-inline-block">Resume</button>
+                            <button class="btn btn-primary mt-2 btn-sm d-md-none">Resume</button>
+
+                            <button class="btn btn-secondary mt-2 btn-lg d-none d-md-inline-block">Download Full Portfolio</button>
+                            <button class="btn btn-secondary mt-2 btn-sm d-md-none">Download Full Portfolio</button>
+
                         </div>
-    
                     </div>
                 </div>
             </div>
         </splash>
+        
+        
         
 
         <!-- Site Body -->
@@ -70,7 +83,7 @@
                         <!-- Project Summary Cards -->
                         <div id="projects" class="col"></div>
                         <!-- Render the Project cards showing the summaries -->
-                        <script src="js/render_project_cards.js"></script>
+                        <script src="/js/render_project_cards.js"></script>
                     </div>
                 </div>
             </div>

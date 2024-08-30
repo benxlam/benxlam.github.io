@@ -1,6 +1,8 @@
 $(document).ready(function() {
 
     // Get the projects data from the JSON file
+
+    console.log(PROJECTS_JSON);
     $.getJSON(PROJECTS_JSON)
         .done(function(data) {
             const projectsContainer = $('#projects');
@@ -10,6 +12,7 @@ $(document).ready(function() {
             // Iterate over each project in the JSON file and render a project card for each
             $.each(data, function(index, project) {
                 const projectCard = $('<div>').addClass('row');
+                console.log(project);
                 
                 // Fetch the project card template
                 $.get(PROJECTCARD_TEMPLATE, function(template) {
@@ -17,12 +20,10 @@ $(document).ready(function() {
                     $.get(`/projects/${project.title}/summary.md`, function(markdownText) {
                         // Convert Markdown to HTML
                         const renderedMarkdown = marked.parse(markdownText);
-
-                        console.log(project);
-
+                        console.log(template);
                         // Replace template placeholders with project data
                         const renderedTemplate = template
-                            .replace('${project.title}', project.title)
+                            .replace(/\${project.title}/g, project.title)   // Replace all instances of ${project.title}
                             .replace('${project.date}', project.date)
                             .replace('${project.image}', project.image)
                             .replace('${project.text}', renderedMarkdown) // Insert rendered Markdown
