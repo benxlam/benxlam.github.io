@@ -40,15 +40,31 @@ function fetchProjectContent() {
 }
 
 function populateProjectDropdown() {
-    $.getJSON(PROJECTS_JSON)
-        .done(function(data) {
-            const projectDropdown = $('#all-project-dropdown');
 
-            $.each(data, function(index, project) {
-                const projectOption = $('<option>').attr('value', project.title);
-                projectDropdown.append(projectOption);
-            });
+    console.log('Populating project dropdown');
+    $.getJSON(PROJECTS_JSON)
+    .done(function(data) {
+        const projectDropdown = $('#all-project-dropdown');
+
+        $.each(data, function(index, project) {
+            // Create a new list item with a dropdown link
+            const projectItem = $('<li>').addClass('nav-item');
+            const projectLink = $('<a>').addClass('dropdown-item')
+                                        .attr('href', `/projects?project=${project.title.replace(/ /g, '_').toLowerCase()}`)
+                                        .text(project.title);
+            
+            // Append the link to the list item
+            projectItem.append(projectLink);
+            
+            // Append the list item to the dropdown
+            projectDropdown.append(projectItem);
         });
+    })
+    .fail(function(error) {
+        console.error('Error fetching project data:', error);
+    });
+
+
 }
 
 $(document).ready(function() {
