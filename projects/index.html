@@ -14,8 +14,9 @@
         <!-- Marked (Markdown viewer) -->
         <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
         
-        <!-- Load the paths for js -->
+        <!-- Load the paths for js, populate the site with content -->
         <script src="/js/paths.js"></script>
+        <script src="/js/fetch_project_site_content.js"></script>
         
         <style>
             @keyframes fadeIn {
@@ -53,8 +54,9 @@
                                 <button class="btn btn-bd-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-display="static">
                                     <span class="d-none d-lg-inline">Projects</span>
                                 </button>
-                                <!-- Dropdown menu aligned to the right -->
-                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bd-versions">
+
+                                <!-- Dynamically populate the dropdown-->
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="all-project-dropdown">
                                     <li><a class="dropdown-item" href="#">Action</a></li>
                                     <li><a class="dropdown-item" href="#">Another action</a></li>
                                     <li><a class="dropdown-item" href="#">Something else here</a></li>
@@ -72,7 +74,6 @@
                 
                 <!-- Fetch the project content using js -->
                 <div id="project-webpage-content" class="col"></div>
-                <script src="/js/fetch_project_content.js"></script>
             </div>
         </main>
 

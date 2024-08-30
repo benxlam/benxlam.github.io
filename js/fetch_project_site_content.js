@@ -37,10 +37,21 @@ function fetchProjectContent() {
             }
 
         });
+}
 
+function populateProjectDropdown() {
+    $.getJSON(PROJECTS_JSON)
+        .done(function(data) {
+            const projectDropdown = $('#all-project-dropdown');
 
+            $.each(data, function(index, project) {
+                const projectOption = $('<option>').attr('value', project.title);
+                projectDropdown.append(projectOption);
+            });
+        });
 }
 
 $(document).ready(function() {
     fetchProjectContent();
+    populateProjectDropdown();
 });
