@@ -13,6 +13,9 @@
         
         <!-- Marked (Markdown viewer) -->
         <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+        <!-- Load the paths for js -->
+        <script src="js/paths.js"></script>
         
         <style>
             @keyframes fadeIn {
@@ -25,57 +28,63 @@
                     background-color: transparent; /* End with transparent or the final color */
                 }
             }
-            
+
             .projectcard-markdown-body {
                 font-size: 20px; /* Adjust the font size as needed */
             }
             body {
-                animation: fadeIn 1s ease-in-out; /* Adjust the duration as needed */
+                animation: fadeIn 1.5s ease-in-out; /* Adjust the duration as needed */
             }
         </style>
     </head>
 
     <body>
         <!-- Splash header -->
-        <div class="container-fluid bg-dark text-white " style="height: 90vh; padding-top: 30vh;">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h1 class="display-1" style="font-family: Arial;">Benjamin Lam</h1>
-                        <button class="btn btn-primary btn-lg">Resume</button>
-                        <button class="btn btn-secondary btn-lg">Download Full Portfolio</button>
+        <splash>
+            <div class="container-fluid bg-dark text-white " style="height: 90vh; padding-top: 30vh;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 class="display-1" style="font-family: Arial;">Benjamin Lam</h1>
+                            <button class="btn btn-primary btn-lg">Resume</button>
+                            <button class="btn btn-secondary btn-lg">Download Full Portfolio</button>
+                        </div>
+    
+                        <!-- <div class="col-md-12 mt-3 load-fade-in">
+                            <ul class="list-unstyled">
+                                <li><a href="#">Link 1</a></li>
+                                <li><a href="#">Link 2</a></li>
+                                <li><a href="#">Link 3</a></li>
+                            </ul>
+                        </div> -->
+    
                     </div>
-
-                    <!-- <div class="col-md-12 mt-3 load-fade-in">
-                        <ul class="list-unstyled">
-                            <li><a href="#">Link 1</a></li>
-                            <li><a href="#">Link 2</a></li>
-                            <li><a href="#">Link 3</a></li>
-                        </ul>
-                    </div> -->
-
                 </div>
             </div>
-        </div>
+        </splash>
+        
 
         <!-- Site Body -->
-        <div class="container mt-3" style="padding-bottom: 20vh;">
+        <main>
+            <div class="container mt-3" style="padding-bottom: 20vh;">
 
-            <!-- Projects Section -->
-            <div class="container mt-3">
-                <!-- Project Section Title -->
-                <div class="row">
-                    <div class="col-md-12">
-                        <h1 class="display-5">Projects</h1>
-                        <hr style="height: 1px; background-color: black;">
+                <!-- Projects Section -->
+                <div class="container mt-3">
+                    <!-- Project Section Title -->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 class="display-5">Projects</h1>
+                            <hr style="height: 1px; background-color: black;">
+                        </div>
+    
+                        <!-- Project Summary Cards -->
+                        <div id="projects" class="col"></div>
+                        <!-- Render the Project cards showing the summaries -->
+                        <script src="js/render_project_cards.js"></script>
                     </div>
-
-                    <!-- Project Summary Cards -->
-                    <div id="projects" class="col"></div>
-                    <!-- Render the Project cards showing the summaries -->
-                    <script src="js/render_project_cards.js"></script>
                 </div>
             </div>
-        </div>
+        </main>
+        
     </body>
 </html>

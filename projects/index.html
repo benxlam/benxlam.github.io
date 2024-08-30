@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+        <title> PROJECT </title>
+        <!-- Load jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        
+        <!-- Marked (Markdown viewer) -->
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+        
+        <!-- Load the paths for js -->
+        <script src="/js/paths.js"></script>
+        
+        <style>
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                    background-color: black; /* Start with black */
+                }
+                to {
+                    opacity: 1;
+                    background-color: transparent; /* End with transparent or the final color */
+                }
+            }
+
+            .projectcard-markdown-body {
+                font-size: 20px; /* Adjust the font size as needed */
+            }
+            .navbar-nav .dropdown-menu {
+                right: 0; /* Aligns dropdown to the far right */
+                left: auto; /* Ensures it doesn't push from the left */
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <!-- Home -->
+                    <a class="navbar-brand" href="/#">Home</a>
+
+                    <!-- Dropdown menu to show all projects -->
+                    <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNavDropdown">
+                        <ul class="navbar-nav">
+                            <li class="nav-item dropdown">
+                                <button class="btn btn-bd-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-display="static">
+                                    <span class="d-none d-lg-inline">Projects</span>
+                                </button>
+                                <!-- Dropdown menu aligned to the right -->
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bd-versions">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            
+        </header>
+
+        <main>
+            <div class="container d-flex col-md-6 mx-auto" id="project-webpage-content">
+                
+                <!-- Fetch the project content using js -->
+                 <script src="/js/fetch_project_content.js"></script>
+            </div>
+        </main>
+
+    </body>
+</html>

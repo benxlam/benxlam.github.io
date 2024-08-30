@@ -1,6 +1,3 @@
-const PROJECTCARD_TEMPLATE = 'projects/templates/projectCard_template.html'
-const PROJECTS_JSON = 'projects/projects.json'
-
 $(document).ready(function() {
 
     // Get the projects data from the JSON file
@@ -16,9 +13,8 @@ $(document).ready(function() {
                 
                 // Fetch the project card template
                 $.get(PROJECTCARD_TEMPLATE, function(template) {
-                    console.log(project.text);
                     // Fetch the Markdown file
-                    $.get(project.text, function(markdownText) {
+                    $.get(`/projects/${project.title}/summary.md`, function(markdownText) {
                         // Convert Markdown to HTML
                         const renderedMarkdown = marked.parse(markdownText);
 
@@ -30,7 +26,7 @@ $(document).ready(function() {
                             .replace('${project.date}', project.date)
                             .replace('${project.image}', project.image)
                             .replace('${project.text}', renderedMarkdown) // Insert rendered Markdown
-                            .replace('${project.link}', project.link);
+                            .replace('${project.url}', project.title.replace(/ /g, '_').toLowerCase()); // URL-friendly project title
 
                         // Append the project card to the projects container
                         projectCard.html(renderedTemplate);
