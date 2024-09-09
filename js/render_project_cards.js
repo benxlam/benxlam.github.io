@@ -20,7 +20,7 @@ $(document).ready(function() {
                     $.get(`/projects/${project.title}/summary.md`, function(markdownText) {
                         // Convert Markdown to HTML
                         const renderedMarkdown = marked.parse(markdownText);
-                        console.log(template);
+                        
                         // Replace template placeholders with project data
                         const renderedTemplate = template
                             .replace(/\${project.title}/g, project.title)   // Replace all instances of ${project.title}
