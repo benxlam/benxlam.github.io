@@ -1,6 +1,13 @@
 # Project 1
 
 Lorem ipsum odor amet, consectetuer adipiscing elit. Duis in odio eu hac himenaeos suspendisse aliquet? Mauris egestas cubilia vivamus tincidunt nulla? Facilisi nostra mauris lacinia; conubia massa orci elit. Interdum placerat dis id lectus elit at blandit. Praesent ultrices amet iaculis vehicula praesent sociosqu est. Fames senectus curabitur elementum rhoncus platea varius porta euismod. Sit mattis fames felis viverra litora gravida. Cubilia netus sodales, praesent nibh vel fermentum lacus praesent.
+<img src="./writeup.fld/image003.png" alt="image003.png" style="display: block; margin-left: auto; margin-right: auto;">
+
+~~~python
+def python():
+	This is not the best to do
+~~~
+
 
 Sollicitudin lacus suspendisse himenaeos nunc fames maximus volutpat dapibus. Velit nisi aliquet suspendisse maximus maecenas rutrum metus magnis. Magnis at nisi inceptos vel purus interdum sollicitudin venenatis. Risus phasellus porta aenean malesuada blandit convallis? Elit fringilla consectetur ultricies eget lobortis ullamcorper habitant purus. Aaliquam commodo dui; augue morbi vulputate habitant. Lacus nostra nulla sapien ex risus morbi primis urna.
 

@@ -17,16 +17,20 @@ function fetchProjectContent() {
             }
 
             console.log('Fetching project content for:', project);
-
-
             if (project) {
-                fetch(`/projects/${project}/webpage.md`)
+                fetch(`/projects/${project}/project_page.html`)
                     .then(response => {
                         if (!response.ok) throw new Error(`Failed to load project content`);
                         return response.text();
                     })
-                    .then(markdownText => {
-                        const renderedHTML = marked.parse(markdownText); // Using marked.js to parse Markdown
+                    .then(writeup_html => {
+                        let renderedHTML = writeup_html;
+                        const project_path = `/projects/${project}/`;
+                        // The path of images in the generated html is not correct, so we need to fix it
+                        renderedHTML = renderedHTML.replace(/src="([^"]*)"/g, (match, p1) => {
+                            return `src="${project_path}${p1}"`;
+                        });
+
                         document.getElementById('project-webpage-content').innerHTML = renderedHTML;
                     })
                     .catch(error => {
@@ -35,6 +39,23 @@ function fetchProjectContent() {
             } else {
                 document.getElementById('project-webpage-content').innerHTML = "<p>No project specified.</p>";
             }
+
+            // if (project) {
+            //     fetch(`/projects/${project}/webpage.md`)
+            //         .then(response => {
+            //             if (!response.ok) throw new Error(`Failed to load project content`);
+            //             return response.text();
+            //         })
+            //         .then(markdownText => {
+            //             const renderedHTML = marked.parse(markdownText); // Using marked.js to parse Markdown
+            //             document.getElementById('project-webpage-content').innerHTML = renderedHTML;
+            //         })
+            //         .catch(error => {
+            //             console.error('Error:', error);
+            //         });
+            // } else {
+            //     document.getElementById('project-webpage-content').innerHTML = "<p>No project specified.</p>";
+            // }
 
         });
 }
@@ -51,7 +72,8 @@ function populateProjectDropdown() {
             const projectItem = $('<li>').addClass('nav-item');
             const projectLink = $('<a>').addClass('dropdown-item')
                                         .attr('href', `/projects?project=${project.title.replace(/ /g, '_').toLowerCase()}`)
-                                        .text(project.title);
+                                        .text(project.title)
+                                        .css('text-decoration', 'none');
             
             // Append the link to the list item
             projectItem.append(projectLink);

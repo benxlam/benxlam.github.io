@@ -19,52 +19,61 @@
         <script src="/js/fetch_project_site_content.js"></script>
         
         <style>
-            @keyframes fadeIn {
-                from {
-                    opacity: 0;
-                    background-color: black; /* Start with black */
-                }
-                to {
-                    opacity: 1;
-                    background-color: transparent; /* End with transparent or the final color */
-                }
-            }
-
             .projectcard-markdown-body {
                 font-size: 20px; /* Adjust the font size as needed */
             }
-            .navbar-nav .dropdown-menu {
+            .dropdown-menu {
                 right: 0; /* Aligns dropdown to the far right */
                 left: auto; /* Ensures it doesn't push from the left */
             }
+            </style>
         </style>
     </head>
 
     <body>
         <!-- Navbar -->
+        <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <div class="container-xxl d-flex">
+                
+
+                <a class="btn btn-light" href="/#" style="text-decoration: none;">Home</a>      
+
+
+                
+                <div class="dropdown ms-auto">
+                    <button class="btn btn-bd-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-display="static">
+                        <span class="d-none d-sm-inline">Projects</span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end" id="all-project-dropdown" aria-labelledby="dropdownMenuButton"></ul>
+                </div>
+                
+            </div>
+        </nav> -->
+
+        <!-- Navbar -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
             <div class="container-fluid">
                 <!-- Home -->
-                <a class="navbar-brand" href="/#">Home</a>
+                <a class="btn btn-light" href="/#" style="text-decoration: none;">Home</a> 
 
                 <!-- Dropdown menu to show all projects -->
-                <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNavDropdown">
+                <div class="collapse d-flex justify-content-end" id="navbarNavDropdown">
                     <ul class="navbar-nav">
-                        <li class="nav-item dropdown">
-                            <button class="btn btn-bd-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-display="static">
-                                <span class="d-none d-lg-inline">Projects</span>
+                        <div class="nav-item dropdown">
+                            <button class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-display="static">
+                                <span>Projects</span>
                             </button>
 
                             <!-- Dynamically populate the dropdown-->
                             <ul class="dropdown-menu dropdown-menu-end" id="all-project-dropdown" aria-labelledby="dropdownMenuButton"></ul>
-                        </li>
+                        </div>
                     </ul>
                 </div>
             </div>
         </nav>
 
         <main>
-            <div class="container d-flex col-md-6 mx-auto mt-5 pt-5">
+            <div class="container d-flex col-md-10 mx-auto mt-5 pt-5">
                 <!-- Dynamically generate (fetch) the project content using js, converted from .md file-->
                 <div id="project-webpage-content" class="col"></div>
             </div>
