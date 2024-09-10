@@ -39,24 +39,6 @@ function fetchProjectContent() {
             } else {
                 document.getElementById('project-webpage-content').innerHTML = "<p>No project specified.</p>";
             }
-
-            // if (project) {
-            //     fetch(`/projects/${project}/webpage.md`)
-            //         .then(response => {
-            //             if (!response.ok) throw new Error(`Failed to load project content`);
-            //             return response.text();
-            //         })
-            //         .then(markdownText => {
-            //             const renderedHTML = marked.parse(markdownText); // Using marked.js to parse Markdown
-            //             document.getElementById('project-webpage-content').innerHTML = renderedHTML;
-            //         })
-            //         .catch(error => {
-            //             console.error('Error:', error);
-            //         });
-            // } else {
-            //     document.getElementById('project-webpage-content').innerHTML = "<p>No project specified.</p>";
-            // }
-
         });
 }
 
