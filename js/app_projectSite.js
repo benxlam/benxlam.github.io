@@ -42,14 +42,16 @@ function fetchProjectContent() {
         });
 }
 
-function populateProjectDropdown() {
-
-    console.log('Populating project dropdown');
-    $.getJSON(PROJECTS_JSON)
-    .done(function(data) {
+async function populateProjectDropdown() {
+    try {
+        console.log('Populating project dropdown');
+        
+        // Fetch the project JSON data
+        const response = await $.getJSON(PROJECTS_JSON);
         const projectDropdown = $('#all-project-dropdown');
 
-        $.each(data, function(index, project) {
+        // Iterate through the projects in order
+        for (const project of response) {
             // Create a new list item with a dropdown link
             const projectItem = $('<li>').addClass('nav-item');
             const projectLink = $('<a>').addClass('dropdown-item')
@@ -62,14 +64,12 @@ function populateProjectDropdown() {
             
             // Append the list item to the dropdown
             projectDropdown.append(projectItem);
-        });
-    })
-    .fail(function(error) {
+        }
+    } catch (error) {
         console.error('Error fetching project data:', error);
-    });
-
-
+    }
 }
+
 
 $(document).ready(function() {
     fetchProjectContent();

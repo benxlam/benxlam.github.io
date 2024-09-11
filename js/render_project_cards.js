@@ -28,7 +28,7 @@ $(document).ready(function() {
                         .replace('${project.date}', project.date)
                         .replace('${project.image}', project.image)
                         .replace('${project.text}', summary_html)
-                                .replace(/\${project.url}/g, project.title.replace(/ /g, '_').toLowerCase());
+                        .replace(/\${project.url}/g, project.title.replace(/ /g, '_').toLowerCase());
 
                     // Append the project card to the projects container
                     projectCard.html(renderedTemplate);
