@@ -9,16 +9,17 @@ function setup() {
     canvas.style('z-index', '-1'); // Send to back
 
 
-    for (let i = 0; i < 10; i++) {
-        balls.push(new Ball(random(width), random(height), random(10, 50)));
+    for (let i = 0; i < 15; i++) {
+        let r = random(10, 50);
+        balls.push(new Ball(random(r, width-r), random(r, height-r), r));
     }
 }
 
 function draw() {
     background("#212529"); 
-    text("Hello World", mouseX, mouseY);
-        textAlign(CENTER, CENTER);
-        fill(255);
+    // text("Hello World", mouseX, mouseY);
+    //     textAlign(CENTER, CENTER);
+    //     fill(255);
     
     for (let ball of balls) {
         ball.show();
@@ -35,20 +36,26 @@ class Ball {
         this.x = x;
         this.y = y;
         this.r = r;
-        this.v = [random(-1, 1), random(-1, 1)];
+        let theta = random(0, 6.28);
+        let speed = random(0.75, 1.5);
+        this.v = [speed*Math.cos(theta), speed*Math.sin(theta)];
+        console.log(this.v);
     }
 
     show() {
         ellipse(this.x, this.y, this.r*2);
+        fill(220);
+        noStroke();
+
     }
 
     update() {
         this.x += this.v[0];
         this.y += this.v[1];
-        if (this.x < 0 || this.x > width) {
+        if (this.x - this.r < 0 || this.x + this.r > width) {
             this.v[0] *= -1;
         }
-        if (this.y < 0 || this.y > height) {
+        if (this.y - this.r< 0 || this.y + this.r > height) {
             this.v[1] *= -1;
         }
     }
