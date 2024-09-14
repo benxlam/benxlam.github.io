@@ -37,16 +37,24 @@ function fetchProjectContent() {
                             if (src && !src.startsWith('http')) { // Check if src is a relative path
                                 img.setAttribute('src', `${project_path}${src}`);
                             }
-                        });
 
-                        // Also take out the width and height attributes of the images and make the images span the full width and
-                        // be responsive
-                        images.forEach(img => {
+                            // Also take out the width and height attributes of the images and make the images span the full width and be responsive
                             img.removeAttribute('width');
                             img.removeAttribute('height');
                             img.setAttribute('style', 'max-width:100%; height:auto;');
                             img.setAttribute('class', 'img-fluid');
                         });
+
+                        // Make all external links open in a new tab
+                        const links = document.querySelectorAll('#project-webpage-content a');
+                        links.forEach(link => {
+                            const href = link.getAttribute('href');
+                            if (href && href.startsWith('http')) {
+                                link.setAttribute('target', '_blank');
+                                link.setAttribute('rel', 'noopener noreferrer');
+                            }
+                        });
+
                     })
                     .catch(error => {
                         console.error('Error:', error);
