@@ -1,8 +1,18 @@
 [
-
+    {
+        "title": "Automatic SEM PPT Generation",
+        "date": "May 2023",
+        "image": "projects/Microfluidics/image004.png"
+    },
     {
         "title": "Microfluidics",
         "date": "Mar 2021",
         "image": "projects/Microfluidics/image004.png"
+    },
+    {
+        "title": "Microfluidics PCB",
+        "date": "Oct 2020",
+        "image": "projects/Microfluidics PCB/image003.png"
     }
+
 ]

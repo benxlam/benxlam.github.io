@@ -39,7 +39,6 @@ class Ball {
         let theta = random(0, 6.28);
         let speed = random(0.75, 1.5);
         this.v = [speed*Math.cos(theta), speed*Math.sin(theta)];
-        console.log(this.v);
     }
 
     show() {

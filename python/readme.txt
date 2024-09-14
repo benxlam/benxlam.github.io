@@ -1,0 +1,1 @@
+The scripts in /python are tools meant to be used offline to update assets in the website.

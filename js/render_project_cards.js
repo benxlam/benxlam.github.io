@@ -1,7 +1,6 @@
 $(document).ready(function() {
 
     // Get the projects data from the JSON file
-    console.log(PROJECTS_JSON);
     $.getJSON(PROJECTS_JSON)
     .done(function(data) {
         const projectsContainer = $('#projects');
@@ -20,7 +19,6 @@ $(document).ready(function() {
             $.get(PROJECTCARD_TEMPLATE, function(template) {
                 // Fetch the Markdown file
                 $.get(`/projects/${project.title}/summary.html`, function(summary_html) {
-                    console.log(summary_html);
                     
                     // Replace template placeholders with project data
                     const renderedTemplate = template

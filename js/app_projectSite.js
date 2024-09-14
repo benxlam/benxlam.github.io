@@ -16,6 +16,7 @@ function fetchProjectContent() {
                 }
             }
 
+            //Get the project content, is a converted word document to html
             console.log('Fetching project content for:', project);
             if (project) {
                 fetch(`/projects/${project}/project_page.html`)
