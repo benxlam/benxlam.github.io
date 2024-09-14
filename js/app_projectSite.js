@@ -25,14 +25,32 @@ function fetchProjectContent() {
                         return response.text();
                     })
                     .then(writeup_html => {
-                        let renderedHTML = writeup_html;
                         const project_path = `/projects/${project}/`;
-                        // The path of images in the generated html is not correct, so we need to fix it
-                        renderedHTML = renderedHTML.replace(/src="([^"]*)"/g, (match, p1) => {
-                            return `src="${project_path}${p1}"`;
+            
+                        // Insert the HTML into the page
+                        document.getElementById('project-webpage-content').innerHTML = writeup_html;
+            
+                        // Update image paths
+                        const images = document.querySelectorAll('#project-webpage-content img');
+                        images.forEach(img => {
+                            const src = img.getAttribute('src');
+                            if (src && !src.startsWith('http')) { // Check if src is a relative path
+                                img.setAttribute('src', `${project_path}${src}`);
+                            }
                         });
 
-                        document.getElementById('project-webpage-content').innerHTML = renderedHTML;
+                        // Encapsulate the images in a container div with full span
+                        //Also take out the width and height attributes of the images
+                        images.forEach(img => {
+                            // const container = document.createElement('div');
+                            // container.className = 'col-12';
+                            // img.parentNode.insertBefore(container, img);
+                            img.removeAttribute('width');
+                            img.removeAttribute('height');
+                            img.setAttribute('style', 'max-width:100%; height:auto;');
+                            img.setAttribute('class', 'img-fluid');
+                            // container.appendChild(img);
+                        });
                     })
                     .catch(error => {
                         console.error('Error:', error);
