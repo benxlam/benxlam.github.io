@@ -29,6 +29,9 @@ function fetchProjectContent() {
             
                         // Insert the HTML into the page
                         document.getElementById('project-webpage-content').innerHTML = writeup_html;
+
+                        // Update the title
+                        document.title = `Benjamin Lam - ${project}`;
             
                         // Update image paths
                         const images = document.querySelectorAll('#project-webpage-content img');
