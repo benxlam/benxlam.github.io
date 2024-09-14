@@ -39,17 +39,13 @@ function fetchProjectContent() {
                             }
                         });
 
-                        // Encapsulate the images in a container div with full span
-                        //Also take out the width and height attributes of the images
+                        // Also take out the width and height attributes of the images and make the images span the full width and
+                        // be responsive
                         images.forEach(img => {
-                            // const container = document.createElement('div');
-                            // container.className = 'col-12';
-                            // img.parentNode.insertBefore(container, img);
                             img.removeAttribute('width');
                             img.removeAttribute('height');
                             img.setAttribute('style', 'max-width:100%; height:auto;');
                             img.setAttribute('class', 'img-fluid');
-                            // container.appendChild(img);
                         });
                     })
                     .catch(error => {
