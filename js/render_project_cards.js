@@ -18,14 +18,14 @@ $(document).ready(function() {
             // Fetch the project card template
             $.get(PROJECTCARD_TEMPLATE, function(template) {
                 // Fetch the Markdown file
-                $.get(`/projects/${project.title}/summary.html`, function(summary_html) {
+                $.get(`/projects/${project.title}/project_card.html`, function(project_card_html) {
                     
                     // Replace template placeholders with project data
                     const renderedTemplate = template
                         .replace(/\${project.title}/g, project.title)
                         .replace('${project.date}', project.date)
                         .replace('${project.image}', project.image)
-                        .replace('${project.text}', summary_html)
+                        .replace('${project.text}', project_card_html)
                         .replace(/\${project.url}/g, project.title.replace(/ /g, '_').toLowerCase());
 
                     // Append the project card to the projects container
