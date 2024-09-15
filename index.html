@@ -71,26 +71,33 @@
                                 </div>
                             </div>
                               
-                            <!-- Large screen dropdown button -->
-                            <button class="btn btn-primary mt-2 btn-lg dropdown-toggle d-none d-lg-inline-block" type="button" id="resumeDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                                Resume
-                            </button>
-                            <!-- Small screen dropdown button -->
-                            <button class="btn btn-primary mt-2 btn-sm dropdown-toggle d-lg-none" type="button" id="resumeDropdownSmall" data-bs-toggle="dropdown" aria-expanded="false">
-                                Resume
-                            </button>
+                            <!-- Single resume button for large screens -->
+                            <a href="/resume/BENJAMIN LAM_Resume_Mechanical.pdf">
+                                <button class="btn btn-primary mt-2 btn-lg d-none d-lg-inline-block">Resume</button>
+                            </a>
+                            <!-- Single resume button for small screens -->
+                            <a href="/resume/BENJAMIN LAM_Resume_Mechanical.pdf">
+                                <button class="btn btn-primary mt-2 btn-sm d-lg-none">Resume</button>
+                            </a>
 
-                            <!-- Shared dropdown menu -->
-                            <ul class="dropdown-menu" aria-labelledby="resumeDropdown">
-                                <li><a class="dropdown-item" href="/resume/BENJAMIN LAM_Resume_Mechanical.pdf" target="_blank">Resume (Mechanical)</a></li>
-                                <li><a class="dropdown-item" href="/resume/BENJAMIN LAM_Resume_MSE.pdf" target="_blank">Resume (Materials)</a></li>
-                            </ul>
-
-
-                            <a href="/projects/BenjaminLam_FullPortfolio.pdf" download><button class="btn btn-secondary mt-2 btn-lg d-none d-lg-inline-block">Download Full Portfolio</button></a>
-                            <a href="/projects/BenjaminLam_FullPortfolio.pdf" download><button class="btn btn-secondary mt-2 btn-sm d-lg-none" >Download Full Portfolio</button></a>
-
-
+                            <!-- Download full portfolio button -->
+                            <a href="/projects/BenjaminLam_FullPortfolio.pdf" download>
+                                <button class="btn btn-secondary mt-2 btn-lg d-none d-lg-inline-block">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+                                        <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"></path>
+                                        <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"></path>
+                                      </svg>
+                                      Download Full Portfolio</button>
+                            </a>
+                            <a href="/projects/BenjaminLam_FullPortfolio.pdf" download>
+                                <button class="btn btn-secondary mt-2 btn-sm d-lg-none" >
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+                                        <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"></path>
+                                        <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"></path>
+                                      </svg>
+                                      Download Full Portfolio
+                                    </button>
+                            </a>
                         </div>
                     </div>
                 </div>
