@@ -21,10 +21,10 @@ function draw() {
     //     textAlign(CENTER, CENTER);
     //     fill(255);
     
-    for (let ball of balls) {
-        ball.show();
-        ball.update();
-    }
+    // for (let ball of balls) {
+    //     ball.show();
+    //     ball.update();
+    // }
 }
 
 function windowResized() {
